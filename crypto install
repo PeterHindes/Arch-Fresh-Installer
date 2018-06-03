@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Based On https://www.howtoforge.com/tutorial/how-to-install-arch-linux-with-full-disk-encryption/
+
+read -p "Do you want to shred (Overwrite with random and Zeros) the drive? (Y/n):" -n 1 -r
+echo    # (optional) move to a new line
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
+fi
