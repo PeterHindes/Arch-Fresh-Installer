@@ -4,7 +4,7 @@ disk=sda
 
 dd if=/dev/zero of=/dev/"$disk" bs=512 count=1000000
 
-$(echo g; echo n; echo; echo; echo +250M; echo n; echo; echo; echo; echo t; echo 1; echo 1; echo w) | fdisk /dev/"$disk"
+(echo g; echo n; echo; echo; echo +250M; echo n; echo; echo; echo; echo t; echo 1; echo 1; echo w) | fdisk /dev/"$disk"
 
 cryptsetup --verbose --cipher aes-xts-plain64 --key-size 512 --hash sha512 --iter-time 5000 --use-random luksFormat /dev/"$disk"2
 
