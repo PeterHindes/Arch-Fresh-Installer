@@ -1,3 +1,5 @@
+
+#!/bin/bash
 disk=sda
 
 dd if=/dev/zero of=/dev/"$disk" bs=512 count=1000000
