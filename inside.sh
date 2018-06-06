@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -xve
+
 hname=Krypton
 
 sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
