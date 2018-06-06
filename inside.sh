@@ -17,11 +17,11 @@ hwclock --systohc --utc
 
 echo $hname > /etc/hostname
 
-echo def | passwd --stdin
+echo "root:def" | chpasswd
 
 useradd -m -g users -G wheel,games,power,optical,storage,scanner,lp,audio,video -s /bin/bash peter
 
-echo def | passwd peter --stdin
+echo "peter:def" | chpasswd
 
 pacman -S sudo grub efibootmgr os-prober
 
