@@ -21,6 +21,9 @@ pacstrap -i /mnt base base-devel
 
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
+
+arch-chroot /mnt pacman --noconfirm -S wget git
+
 arch-chroot /mnt wget https://raw.githubusercontent.com/PeterHindes/Arch-Fresh-Installer/master/inside.sh
 
 arch-chroot /mnt chmod +x inside.sh
