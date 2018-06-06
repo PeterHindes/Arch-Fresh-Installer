@@ -31,7 +31,7 @@ pacman -S sudo grub efibootmgr os-prober
 sed -i 's/root ALL=(ALL) ALL/root ALL=(ALL) ALL\npeter ALL=(ALL) ALL/g' /etc/sudoers
 
 #nano /etc/default/grub
-sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"/g' /etc/default/grub
+sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cryptdevice=\/dev\/sda2:cryptroot"/g' /etc/default/grub
 
 #nano /etc/mkinitcpio.conf
 sed -i 's/block filesystems/block encrypt filesystems/g' /etc/mkinitcpio.conf
