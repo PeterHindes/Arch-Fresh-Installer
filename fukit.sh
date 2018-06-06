@@ -2,6 +2,10 @@
 #!/bin/bash
 disk=sda
 
+umount /dev/mapper/cryptroot
+cryptsetup close cryptroot
+umount /dev/sda*
+
 dd if=/dev/zero of=/dev/"$disk" bs=512 count=1000000
 
 (echo g; echo n; echo; echo; echo +250M; echo n; echo; echo; echo; echo t; echo 1; echo 1; echo w) | fdisk /dev/"$disk"
@@ -29,3 +33,8 @@ arch-chroot /mnt wget https://raw.githubusercontent.com/PeterHindes/Arch-Fresh-I
 arch-chroot /mnt chmod +x inside.sh
 
 arch-chroot /mnt sh inside.sh
+
+umount -R /mnt/boot
+umount -R /mnt
+cryptsetup close cryptroot
+systemctl reboot
