@@ -1,5 +1,7 @@
-
 #!/bin/bash
+
+set -xve
+
 disk=sda
 
 umount /dev/mapper/cryptroot
