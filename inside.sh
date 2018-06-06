@@ -26,7 +26,7 @@ echo def | passwd peter --stdin
 pacman -S sudo grub efibootmgr os-prober
 
 #EDITOR=nano visudo
-sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"/g' /etc/sudoers
+sed -i 's/root ALL=(ALL) ALL/root ALL=(ALL) ALL\npeter ALL=(ALL) ALL/g' /etc/sudoers
 
 #nano /etc/default/grub
 sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"/g' /etc/default/grub
