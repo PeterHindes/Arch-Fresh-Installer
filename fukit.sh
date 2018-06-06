@@ -36,6 +36,8 @@ arch-chroot /mnt chmod +x inside.sh
 
 arch-chroot /mnt sh inside.sh
 
+arch-chroot /mnt rm inside.sh
+
 umount -R /mnt/boot
 umount -R /mnt
 cryptsetup close cryptroot
