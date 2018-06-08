@@ -10,7 +10,7 @@ makepkg
 pacman -U *.pkg.tar.xz
 
 # Wifi and ethernet
-yay -S pacman -S dialog wpa_actiond ifplugd wpa_suppicant
+pacman -S dialog wpa_actiond ifplugd wpa_supplicant
 #ask user for wifi and ethernet cards
 systemctl enable netctl-auto@$wificard
 systemctl enable netctl-ifplugd@$ethernetcard
