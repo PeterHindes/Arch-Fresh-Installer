@@ -2,11 +2,13 @@
 
 disk=sda
 
-umount /dev/mapper/cryptroot
+umount -R /dev/mapper/cryptroot
+umount -R /dev/sda*
+umount -R /mnt/boot
+umount -R /mnt
 cryptsetup close cryptroot
-umount /dev/sda*
 
-dd if=/dev/zero of=/dev/"$disk" bs=512 count=1000000
+dd if=/dev/zero of=/dev/"$disk" bs=512 count=100000
 
 (echo g; echo n; echo; echo; echo +250M; echo n; echo; echo; echo; echo t; echo 1; echo 1; echo w) | fdisk /dev/"$disk"
 
