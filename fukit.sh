@@ -29,14 +29,18 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 
 
 arch-chroot /mnt pacman --noconfirm -S wget git
-
 arch-chroot /mnt wget https://raw.githubusercontent.com/PeterHindes/Arch-Fresh-Installer/master/inside.sh
-
 arch-chroot /mnt chmod +x inside.sh
-
 arch-chroot /mnt sh inside.sh
-
 arch-chroot /mnt rm inside.sh
+
+
+arch-chroot /mnt pacman --noconfirm -S wget git
+arch-chroot /mnt wget https://raw.githubusercontent.com/PeterHindes/Arch-Fresh-Installer/master/new-arch-install.sh
+arch-chroot /mnt chmod +x new-arch-install.sh
+arch-chroot /mnt sh new-arch-install.sh
+arch-chroot /mnt rm new-arch-install.sh
+
 
 umount -R /mnt/boot
 umount -R /mnt
