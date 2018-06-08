@@ -34,12 +34,10 @@ arch-chroot /mnt chmod +x inside.sh
 arch-chroot /mnt sh inside.sh
 arch-chroot /mnt rm inside.sh
 
-
-arch-chroot /mnt pacman --noconfirm -S wget git
-arch-chroot /mnt wget https://raw.githubusercontent.com/PeterHindes/Arch-Fresh-Installer/master/new-arch-install.sh
-arch-chroot /mnt chmod +x new-arch-install.sh
-arch-chroot /mnt sh new-arch-install.sh
-arch-chroot /mnt rm new-arch-install.sh
+arch-chroot /mnt wget https://raw.githubusercontent.com/PeterHindes/Arch-Fresh-Installer/master/laptop-minimum.sh
+arch-chroot /mnt chmod +x laptop-minimum.sh
+arch-chroot /mnt sh laptop-minimum.sh
+arch-chroot /mnt rm laptop-minimum.sh
 
 
 umount -R /mnt/boot
